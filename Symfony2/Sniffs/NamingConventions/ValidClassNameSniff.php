@@ -67,22 +67,6 @@ class Symfony2_Sniffs_NamingConventions_ValidClassNameSniff implements PHP_CodeS
         while ($tokens[$stackPtr]['line'] == $line) {
 
             /*
-             * Suffix interfaces with Interface;
-             */
-            if ('T_INTERFACE' == $tokens[$stackPtr]['type']) {
-                $name = $phpcsFile->findNext(T_STRING, $stackPtr);
-
-                if ($name && substr($tokens[$name]['content'], -9) != 'Interface') {
-                    $phpcsFile->addError(
-                        'Interface name is not suffixed with "Interface"',
-                        $stackPtr,
-                        'InvalidInterfaceName'
-                    );
-                }
-                break;
-            }
-
-            /*
              * Suffix traits with Trait;
              */
             if ('T_TRAIT' == $tokens[$stackPtr]['type']) {
