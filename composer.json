@@ -15,12 +15,6 @@
             "homepage": "https://github.com/stedekay/enterio-coding-standard/graphs/contributors"
         }
     ],
-    "extra": {
-        "branch-alias": {
-            "dev-master": "2.x-dev"
-        }
-    },
-    "minimum-stability": "dev",
     "support" : {
         "source": "https://github.com/stedekay/enterio-coding-standard",
         "issues": "https://github.com/stedekay/enterio-coding-standard/issues"
