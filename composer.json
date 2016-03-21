@@ -15,7 +15,6 @@
             "homepage": "https://github.com/stedekay/enterio-coding-standard/graphs/contributors"
         }
     ],
-    "minimum-stability": "dev",
     "support" : {
         "source": "https://github.com/stedekay/enterio-coding-standard",
         "issues": "https://github.com/stedekay/enterio-coding-standard/issues"
