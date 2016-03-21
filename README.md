@@ -1,8 +1,8 @@
 [![Build Status](https://secure.travis-ci.org/escapestudios/Symfony2-coding-standard.png)](http://travis-ci.org/escapestudios/Symfony2-coding-standard)
 
-# Symfony2 PHP CodeSniffer Coding Standard
+# Enterio PHP CodeSniffer Coding Standard
 
-A coding standard to check against the [Symfony coding standards](http://symfony.com/doc/current/contributing/code/standards.html), originally shamelessly copied from the -disappeared- opensky/Symfony2-coding-standard repository.
+This is a custom coding standard, which is used by all enterio projects.
 
 ## Installation
 
