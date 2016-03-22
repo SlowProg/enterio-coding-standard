@@ -49,18 +49,13 @@ class Symfony2_Sniffs_Commenting_FunctionCommentSniff extends PEAR_Sniffs_Commen
             return;
         }
 
-//        $tokens = $phpcsFile->getTokens();
-//        $code = $tokens[$commentEnd]['code'];
-//
-//        // a comment is not required on protected/private methods
-//        $method = $phpcsFile->getMethodProperties($stackPtr);
-//        $commentRequired = 'public' == $method['scope'];
-//
-//        if (($code === T_COMMENT && !$commentRequired)
-//            || ($code !== T_DOC_COMMENT && !$commentRequired)
-//        ) {
-//            return;
-//        }
+        $tokens = $phpcsFile->getTokens();
+        $code = $tokens[$commentEnd]['code'];
+
+        if (($code === T_COMMENT) || ($code !== T_DOC_COMMENT)
+        ) {
+            return;
+        }
 
         parent::process($phpcsFile, $stackPtr);
     }
