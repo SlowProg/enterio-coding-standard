@@ -49,14 +49,6 @@ class Symfony2_Sniffs_Commenting_FunctionCommentSniff extends PEAR_Sniffs_Commen
             return;
         }
 
-        $tokens = $phpcsFile->getTokens();
-        $code = $tokens[$commentEnd]['code'];
-
-        if (($code === T_COMMENT) || ($code !== T_DOC_COMMENT)
-        ) {
-            return;
-        }
-
         parent::process($phpcsFile, $stackPtr);
     }
 
