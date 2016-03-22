@@ -87,5 +87,4 @@
     <rule ref="Symfony2.Commenting.FunctionComment.MissingParamComment">
         <severity>0</severity>
     </rule>
-
 </ruleset>
