@@ -122,26 +122,26 @@ class Symfony2_Sniffs_Commenting_FunctionCommentSniff extends PEAR_Sniffs_Commen
         return preg_match('#{@inheritdoc}#i', $content) === 1;
     } // end isInheritDoc()
 
-//    /**
-//     * Process the function parameter comments.
-//     *
-//     * @param PHP_CodeSniffer_File $phpcsFile    The file being scanned.
-//     * @param int                  $stackPtr     The position of the current token
-//     *                                           in the stack passed in $tokens.
-//     * @param int                  $commentStart The position in the stack where the comment started.
-//     *
-//     * @return void
-//     */
-//    protected function processParams(PHP_CodeSniffer_File $phpcsFile, $stackPtr, $commentStart)
-//    {
-//        $tokens = $phpcsFile->getTokens();
-//
-//        if ($this->isInheritDoc($phpcsFile, $stackPtr)) {
-//            return;
-//        }
-//
-//        parent::processParams($phpcsFile, $stackPtr, $commentStart);
-//    } // end processParams()
+    /**
+     * Process the function parameter comments.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile    The file being scanned.
+     * @param int                  $stackPtr     The position of the current token
+     *                                           in the stack passed in $tokens.
+     * @param int                  $commentStart The position in the stack where the comment started.
+     *
+     * @return void
+     */
+    protected function processParams(PHP_CodeSniffer_File $phpcsFile, $stackPtr, $commentStart)
+    {
+        $tokens = $phpcsFile->getTokens();
+
+        if ($this->isInheritDoc($phpcsFile, $stackPtr)) {
+            return;
+        }
+
+        parent::processParams($phpcsFile, $stackPtr, $commentStart);
+    } // end processParams()
 
     /**
      * Is the return statement matching?
