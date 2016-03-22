@@ -60,46 +60,46 @@ class Symfony2_Sniffs_Commenting_FunctionCommentSniff extends PEAR_Sniffs_Commen
         parent::process($phpcsFile, $stackPtr);
     }
 
-//    /**
-//     * Process the return comment of this function comment.
-//     *
-//     * @param PHP_CodeSniffer_File $phpcsFile    The file being scanned.
-//     * @param int                  $stackPtr     The position of the current token
-//     *                                           in the stack passed in $tokens.
-//     * @param int                  $commentStart The position in the stack where the comment started.
-//     *
-//     * @return void
-//     */
-//    protected function processReturn(PHP_CodeSniffer_File $phpcsFile, $stackPtr, $commentStart)
-//    {
-//
-//        if ($this->isInheritDoc($phpcsFile, $stackPtr)) {
-//            return;
-//        }
-//
-//        $tokens = $phpcsFile->getTokens();
-//
-//        // Only check for a return comment if a non-void return statement exists
-//        if (isset($tokens[$stackPtr]['scope_opener'])) {
-//            // Start inside the function
-//            $start = $phpcsFile->findNext(T_OPEN_CURLY_BRACKET, $stackPtr, $tokens[$stackPtr]['scope_closer']);
-//            for ($i = $start; $i < $tokens[$stackPtr]['scope_closer']; ++$i) {
-//                // Skip closures
-//                if ($tokens[$i]['code'] === T_CLOSURE) {
-//                    $i = $tokens[$i]['scope_closer'];
-//                    continue;
-//                }
-//
-//                // Found a return not in a closure statement
-//                // Run the check on the first which is not only 'return;'
-//                if ($tokens[$i]['code'] === T_RETURN && $this->isMatchingReturn($tokens, $i)) {
-//                    parent::processReturn($phpcsFile, $stackPtr, $commentStart);
-//                    break;
-//                }
-//            }
-//        }
-//
-//    } /* end processReturn() */
+    /**
+     * Process the return comment of this function comment.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile    The file being scanned.
+     * @param int                  $stackPtr     The position of the current token
+     *                                           in the stack passed in $tokens.
+     * @param int                  $commentStart The position in the stack where the comment started.
+     *
+     * @return void
+     */
+    protected function processReturn(PHP_CodeSniffer_File $phpcsFile, $stackPtr, $commentStart)
+    {
+
+        if ($this->isInheritDoc($phpcsFile, $stackPtr)) {
+            return;
+        }
+
+        $tokens = $phpcsFile->getTokens();
+
+        // Only check for a return comment if a non-void return statement exists
+        if (isset($tokens[$stackPtr]['scope_opener'])) {
+            // Start inside the function
+            $start = $phpcsFile->findNext(T_OPEN_CURLY_BRACKET, $stackPtr, $tokens[$stackPtr]['scope_closer']);
+            for ($i = $start; $i < $tokens[$stackPtr]['scope_closer']; ++$i) {
+                // Skip closures
+                if ($tokens[$i]['code'] === T_CLOSURE) {
+                    $i = $tokens[$i]['scope_closer'];
+                    continue;
+                }
+
+                // Found a return not in a closure statement
+                // Run the check on the first which is not only 'return;'
+                if ($tokens[$i]['code'] === T_RETURN && $this->isMatchingReturn($tokens, $i)) {
+                    parent::processReturn($phpcsFile, $stackPtr, $commentStart);
+                    break;
+                }
+            }
+        }
+
+    } /* end processReturn() */
 
     /**
      * Is the comment an inheritdoc?
