@@ -90,4 +90,8 @@
     <rule ref="Symfony2.Commenting.FunctionComment.MissingParamComment">
         <severity>0</severity>
     </rule>
+
+    <rule ref="Symfony2.Commenting.FunctionComment">
+        <exclude name="Symfony2.Commenting.FunctionComment.Missing"/>
+    </rule>
 </ruleset>
