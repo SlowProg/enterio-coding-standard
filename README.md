@@ -1,8 +1,6 @@
-[![Build Status](https://secure.travis-ci.org/stedekay/enterio-coding-standard.png)](http://travis-ci.org/stedekay/enterio-coding-standard)
+# Get8 PHP CodeSniffer Coding Standard
 
-# Enterio PHP CodeSniffer Coding Standard
-
-This is a custom coding standard, which is used by all enterio projects.
+This is a custom coding standard, which is used by all Get8's projects.
 
 ## Installation
 
@@ -14,11 +12,11 @@ This standard can be installed with the [Composer](https://getcomposer.org/) dep
 
 2. Install the coding standard as a dependency of your project
 
-        composer require --dev stedekay/enterio-coding-standard:~1.0
+        composer require --dev slowprog/get8-coding-standard:~1.0
 
 3. Add the coding standard to the PHP_CodeSniffer install path
 
-        vendor/bin/phpcs --config-set installed_paths vendor/stedekay/enterio-coding-standard
+        vendor/bin/phpcs --config-set installed_paths vendor/slowprog/get8-coding-standard
 
 4. Check the installed coding standards for "Symfony2"
 
@@ -34,11 +32,11 @@ This standard can be installed with the [Composer](https://getcomposer.org/) dep
 
 2. Checkout this repository 
 
-        git clone git://github.com/stedekay/enterio-coding-standard.git
+        git clone git://github.com/slowprog/get8-coding-standard.git
 
 3. Add the coding standard to the PHP_CodeSniffer install path
 
-        phpcs --config-set installed_paths /path/to/enterio-coding-standard
+        phpcs --config-set installed_paths /path/to/get8-coding-standard
 
    Or copy/symlink this repository's "Symfony2"-folder inside the phpcs `Standards` directory
 
