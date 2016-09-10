@@ -1,9 +1,10 @@
 <?xml version="1.0"?>
-<ruleset name="enterio">
-    <description>The enterio coding standard.</description>
+<ruleset name="get8">
+    <description>The Get8 coding standard.</description>
 
-    <!-- There should not be any code in the bundle Resources directory. -->
-    <exclude-pattern>*/Resources/*</exclude-pattern>
+    <!-- There should not be any code in some directories. -->
+    <exclude-pattern>*/data/*</exclude-pattern>
+    <exclude-pattern>*/tests/*</exclude-pattern>
 
     <!-- Symfony follows the standards defined in the PSR-0, PSR-1 and PSR-2 documents. -->
 
@@ -59,11 +60,16 @@
 
         <exclude name="PEAR.Commenting.FunctionComment.SpacingBeforeTags"/>
 
-        <!-- do not check line length -->
-        <exclude name="Generic.Files.LineLength"/>
-
         <!-- covered by Squiz FunctionDeclarationSniff -->
         <exclude name="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine"/>
+    </rule>
+
+    <!-- Lines can be 120 chars long (warnings), errors at 180 chars -->
+    <rule ref="Generic.Files.LineLength">
+        <properties>
+            <property name="lineLimit" value="160"/>
+            <property name="absoluteLineLimit" value="180"/>
+        </properties>
     </rule>
 
     <!-- Don't enforce Zend's private member underscores -->
